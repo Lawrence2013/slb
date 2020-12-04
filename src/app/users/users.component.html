@@ -1,0 +1,33 @@
+<div style="padding: 13px;">
+    <mat-spinner *ngIf="users.length === 0"></mat-spinner>
+
+    <mat-table [dataSource]="users">
+        <!-- User name Definition -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+         <!-- User name Definition -->
+        <ng-container matColumnDef="username">
+            <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+        </ng-container>
+
+        <!-- User name Definition -->
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+        </ng-container>
+
+        <!-- User name Definition -->
+        <ng-container matColumnDef="city">
+            <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.address.city}} </mat-cell>
+        </ng-container>
+
+          <!-- Header and Row Declarations -->
+        <mat-header-row *matHeaderRowDef="['name', 'username', 'email', 'city']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['name', 'username', 'email', 'city']"></mat-row>
+    </mat-table>
+</div>
